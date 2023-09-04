@@ -7,8 +7,8 @@ return {
   { import = "astrocommunity.pack.rust" },
   { import = "astrocommunity.motion.hop-nvim"},
   { import = "astrocommunity.completion.copilot-lua" },
+  { import = "astrocommunity.completion.copilot-lua-cmp" },
   { import = "astrocommunity.bars-and-lines.smartcolumn-nvim" },
   { import = "astrocommunity.pack.python" },
   -- { import = "astrocommunity.colorscheme.catppuccin" },
-  -- { import = "astrocommunity.completion.copilot-lua-cmp" },
 }
