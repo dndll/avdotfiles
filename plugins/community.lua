@@ -32,14 +32,12 @@ return {
 
   { import = "astrocommunity.indent.mini-indentscope"},
 
-  { import = "astrocommunity.lsp.lsp-signature-nvim" },
   { import = "astrocommunity.lsp.lsp-inlayhints-nvim" },
 
   { import = "astrocommunity.syntax.vim-sandwich" },
 
   { import = "astrocommunity.utility.noice-nvim" },
 
-  { import = "astrocommunity.workflow.hardtime-nvim" },
 
   { import = "astrocommunity.bars-and-lines.smartcolumn-nvim" },
   -- { import = "astrocommunity.colorscheme.catppuccin" },
