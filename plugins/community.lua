@@ -30,6 +30,8 @@ return {
   { import = "astrocommunity.editing-support.vim-move"},
   
   { import = "astrocommunity.motion.nvim-spider"},
+  { import = "astrocommunity.motion.portal-nvim"},
+  { import = "astrocommunity.motion.marks-nvim"},
 
   { import = "astrocommunity.indent.mini-indentscope"},
 
