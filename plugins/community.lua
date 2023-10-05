@@ -14,8 +14,9 @@ return {
 
   { import = "astrocommunity.colorscheme.github-nvim-theme" },
 
-  { import = "astrocommunity.completion.copilot-lua" },
-  { import = "astrocommunity.completion.copilot-lua-cmp" },
+  -- { import = "astrocommunity.completion.copilot-lua" },
+  -- { import = "astrocommunity.completion.copilot-lua-cmp" },
+  -- { import = "astrocommunity.completion.codeium-vim" },
   { import = "astrocommunity.completion.cmp-cmdline"},
 
   { import = "astrocommunity.diagnostics.lsp_lines-nvim"},
