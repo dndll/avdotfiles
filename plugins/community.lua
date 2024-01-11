@@ -6,7 +6,7 @@ return {
   { import = "astrocommunity.pack.rust" },
   -- { import = "astrocommunity.pack.python" },
 
-  { import = "astrocommunity.code-runner.sniprun" },
+  -- { import = "astrocommunity.code-runner.sniprun" },
   { import = "astrocommunity.color.twilight-nvim" },
 
   { import = "astrocommunity.colorscheme.github-nvim-theme" },
@@ -21,7 +21,6 @@ return {
   { import = "astrocommunity.editing-support.comment-box-nvim"},
   { import = "astrocommunity.editing-support.cutlass-nvim"}, -- TODO: learn to use this
   { import = "astrocommunity.editing-support.rainbow-delimiters-nvim"},
-  { import = "astrocommunity.editing-support.todo-comments-nvim"},
   { import = "astrocommunity.editing-support.ultimate-autopair-nvim"},
   { import = "astrocommunity.editing-support.vim-move"},
   
