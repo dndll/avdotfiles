@@ -9,12 +9,15 @@
     "plugins": {
       "lua_ls": {
         "enabled": true
+      },
+      "solidity_ls": {
+        "enabled": true
       }
     }
   },
   "lspconfig": {
     "lua_ls": {
-      "Lua.format.enable": false
+      "Lua.format.enable": true
     }
   }
 }

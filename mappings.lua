@@ -33,6 +33,13 @@ return {
 
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
+    -- TODO: https://github.com/David-Kunz/gen.nvim/blob/main/lua/gen/prompts.lua
+    ["<leader>]"] = { 
+      function() 
+        require("gen").prompts["Chat"] {}
+      end,
+      name = "Generate text",  
+    },
   },
   t = {
     -- setting a mapping to false will disable it

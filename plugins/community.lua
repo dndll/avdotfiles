@@ -2,6 +2,10 @@ return {
   -- Add the community repository of plugin specifications
   "AstroNvim/astrocommunity",
   -- available plugins can be found at https://github.com/AstroNvim/astrocommunity
+  { import = "astrocommunity.code-runner.overseer-nvim"},
+ 
+  { import = "astrocommunity.pack.nix" },
+  { import = "astrocommunity.pack.toml" },
 
   { import = "astrocommunity.pack.rust" },
   -- { import = "astrocommunity.pack.python" },
@@ -35,6 +39,10 @@ return {
 
   -- Messages
   { import = "astrocommunity.utility.noice-nvim" },
+
+  -- { import = "astrocommunity.utility.debugging.nvim-chainsaw" },
+
+  { import = "astrocommunity.project.nvim-spectre" },
 
   -- { import = "astrocommunity.bars-and-lines.smartcolumn-nvim" },
 }
