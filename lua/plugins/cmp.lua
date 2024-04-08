@@ -3,6 +3,8 @@ return { -- override nvim-cmp plugin
   dependencies = {
     "tzachar/cmp-ai",
     "lukas-reineke/cmp-rg",
+    "lukas-reineke/cmp-under-comparator",
+    "onsails/lspkind.nvim",
   },
   -- override the options table that is used in the `require("cmp").setup()` call
   opts = function(_, opts)
@@ -10,13 +12,14 @@ return { -- override nvim-cmp plugin
     -- the function is lazy loaded so cmp is able to be required
     local cmp = require("cmp")
     opts.sources = cmp.config.sources({
-      { name = "nvim_lsp", priority = 1000 },
+      { name = "nvim_lsp", priority = 1000, keyword_length = 3 },
       { name = "cmp-dap", priority = 1000 },
-      { name = "luasnip", priority = 750 },
+      { name = "luasnip", priority = 750, keyword_length = 2 },
       { name = "cmdline", priority = 550 },
       {
         name = "buffer",
         priority = 500,
+        keyword_length = 5,
         option = {
           get_bufnrs = function()
             return vim.api.nvim_list_bufs()
@@ -60,12 +63,14 @@ return { -- override nvim-cmp plugin
         fallback()
       end
     end, { "i", "s" })
+
+    local lspkind = require("lspkind")
     opts.formatting = {
       format = function(entry, vim_item)
         -- if you have lspkind installed, you can use it like
         -- in the following line:
         vim_item.kind = lspkind.symbolic(vim_item.kind, { mode = 'symbol' })
-        vim_item.menu = source_mapping[entry.source.name]
+        vim_item.menu = opts.mapping[entry.source.name]
         if entry.source.name == 'cmp_ai' then
           local detail = (entry.completion_item.labelDetails or {}).detail
           vim_item.kind = ''
@@ -82,18 +87,21 @@ return { -- override nvim-cmp plugin
         return vim_item
       end,
     }
+
+    local compare = require('cmp.config.compare')
     opts.sorting = {
       priority_weight = 2,
       comparators = {
-        require('cmp_ai').compare,
-        compare.offset,
-        compare.exact,
-        compare.score,
-        compare.recently_used,
-        compare.kind,
-        compare.sort_text,
-        compare.length,
-        compare.order,
+        require('cmp_ai.compare'),
+        cmp.config.compare.offset,
+        cmp.config.compare.exact,
+        cmp.config.compare.score,
+        cmp.config.compare.recently_used,
+        require "cmp-under-comparator".under,
+        cmp.config.compare.kind,
+        cmp.config.compare.sort_text,
+        cmp.config.compare.length,
+        cmp.config.compare.order,
       },
     }
     -- opts.mapping["<Tab>"] = cmp.mapping(function(fallback)
