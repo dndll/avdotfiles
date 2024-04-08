@@ -12,14 +12,14 @@ return {
       provider_options = {
         model = 'gpt-4-turbo'
       },
-      notify = true,
+      notify = false,
       notify_callback = function(msg)
         require('notify').notify(msg, vim.log.levels.INFO, {
           title = 'OpenAI',
           render = 'compact',
         })
       end,
-      run_on_every_keystroke = true,
+      run_on_every_keystroke = false,
       ignored_file_types = {
         -- default is not to ignore
         -- uncomment to ignore in lua:
