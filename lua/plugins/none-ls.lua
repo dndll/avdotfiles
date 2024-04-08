@@ -1,5 +1,10 @@
+-- if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
+
+-- Customize None-ls sources
+
+---@type LazySpec
 return {
-  "jose-elias-alvarez/null-ls.nvim",
+  "nvimtools/none-ls.nvim",
   opts = function(_, config)
     config = {
       debounce = 2000,
@@ -8,11 +13,11 @@ return {
     -- local null_ls = require "null-ls"
 
     -- Check supported formatters and linters
-    -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/formatting
-    -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
+    -- https://github.com/nvimtools/none-ls.nvim/tree/main/lua/null-ls/builtins/formatting
+    -- https://github.com/nvimtools/none-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
     config.sources = {
       -- Set a formatter
-      -- null_ls.builtins.formatting.stylua,
+      -- none_ls.builtins.formatting.stylua,
       -- null_ls.builtins.formatting.prettier,
     }
     return config -- return final config table

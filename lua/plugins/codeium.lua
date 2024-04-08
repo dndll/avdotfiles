@@ -1,8 +1,13 @@
+---@type LazySpec
 return {
   "Exafunction/codeium.vim",
-  event = "User AstroFile",
+  event = "BufEnter",
+  ---@type AstroUIOpts
   config = function()
-    vim.keymap.set("i", "<C-g>", function() return vim.fn["codeium#Accept"]() end, { expr = true })
+  end
+    -- config = function()
+    --   vim.keymap.set("i", "<C-g>", function() return vim.api.nvim_call_function("codeium#Accept", {}) end, { expr = true })
+    -- end
     -- vim.keymap.set("i", "<c-;>", function() return vim.fn["codeium#CycleCompletions"](1) end, { expr = true })
     -- vim.keymap.set("i", "<c-,>", function() return vim.fn["codeium#CycleCompletions"](-1) end, { expr = true })
     -- vim.keymap.set("i", "<c-x>", function() return vim.fn["codeium#Clear"]() end, { expr = true })
@@ -13,5 +18,4 @@ return {
     --     vim.cmd "CodeiumEnable"
     --   end
     -- end, { noremap = true, desc = "Toggle Codeium active" })
-  end,
 }

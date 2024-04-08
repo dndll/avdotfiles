@@ -1,18 +1,25 @@
+if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
+
+-- AstroCommunity: import any community modules here
+-- We import this file in `lazy_setup.lua` before the `plugins/` folder.
+-- This guarantees that the specs are processed before any user plugins.
+
+---@type LazySpec
 return {
-  -- Add the community repository of plugin specifications
   "AstroNvim/astrocommunity",
-  -- available plugins can be found at https://github.com/AstroNvim/astrocommunity
+  { import = "astrocommunity.pack.lua" },
+  -- import/override with your plugins folder
+  
   { import = "astrocommunity.code-runner.overseer-nvim"},
  
+  { import = "astrocommunity.pack.lua" },
+  { import = "astrocommunity.pack.rust" },
+  -- { import = "astrocommunity.pack.python" },
   { import = "astrocommunity.pack.nix" },
   { import = "astrocommunity.pack.toml" },
 
-  { import = "astrocommunity.pack.rust" },
-  -- { import = "astrocommunity.pack.python" },
-
   -- { import = "astrocommunity.code-runner.sniprun" },
   { import = "astrocommunity.color.twilight-nvim" },
-
   { import = "astrocommunity.colorscheme.github-nvim-theme" },
 
   -- { import = "astrocommunity.completion.copilot-lua" },
@@ -34,8 +41,6 @@ return {
   { import = "astrocommunity.motion.marks-nvim"},
 
   -- { import = "astrocommunity.indent.mini-indentscope"},
-
-  { import = "astrocommunity.lsp.lsp-inlayhints-nvim" },
 
   -- Messages
   { import = "astrocommunity.utility.noice-nvim" },
