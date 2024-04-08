@@ -1,10 +1,31 @@
 ---@type LazySpec
 return {
-  "Exafunction/codeium.vim",
+  "tzachar/cmp-ai",
   event = "BufEnter",
   ---@type AstroUIOpts
   config = function()
-       vim.keymap.set("i", "<C-g>", function() return vim.api.nvim_call_function("codeium#Accept", {}) end, { expr = true })
+    local cmp_ai = require('cmp_ai.config')
+
+    cmp_ai:setup({
+      max_lines = 1000,
+      provider = 'OpenAI', -- or bard or olama
+      provider_options = {
+        model = 'gpt-4-turbo'
+      },
+      notify = true,
+      notify_callback = function(msg)
+        require('notify').notify(msg, vim.log.levels.INFO, {
+          title = 'OpenAI',
+          render = 'compact',
+        })
+      end,
+      run_on_every_keystroke = true,
+      ignored_file_types = {
+        -- default is not to ignore
+        -- uncomment to ignore in lua:
+        -- lua = true
+      },
+    })
   end
     -- config = function()
     --   vim.keymap.set("i", "<C-g>", function() return vim.api.nvim_call_function("codeium#Accept", {}) end, { expr = true })
@@ -20,3 +41,10 @@ return {
     --   end
     -- end, { noremap = true, desc = "Toggle Codeium active" })
 }
+
+
+  -- max_lines = 100,
+  -- provider = 'Ollama',
+  -- provider_options = {
+  --   model = 'codellama:7b-code',
+  -- },
