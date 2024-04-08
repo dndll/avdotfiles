@@ -30,9 +30,9 @@ return {
           debug = false -- Prints errors and the command which is run.
       }
   },
-  {
-      'mrcjkb/rustaceanvim',
-      version = '^4', -- Recommended
-      ft = { 'rust' },
-  },
+  -- {
+  --     'mrcjkb/rustaceanvim',
+  --     version = '^4', -- Recommended
+  --     ft = { 'rust' },
+  -- },
 }
