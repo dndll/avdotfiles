@@ -10,7 +10,7 @@ return {
   
   { import = "astrocommunity.code-runner.overseer-nvim"},
 
-  { import = "astrocommunity.pack.lua" },
+  -- { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.pack.rust" },
   { import = "astrocommunity.pack.python" },
   { import = "astrocommunity.pack.nix" },
@@ -18,10 +18,10 @@ return {
 --  { import = "astrocommunity.pack.typescript-all-in-one" },
   { import = "astrocommunity.pack.bash" },
   { import = "astrocommunity.pack.yaml" },
-  { import = "astrocommunity.pack.tailwindcss" },
+  -- { import = "astrocommunity.pack.tailwindcss" },
   { import = "astrocommunity.pack.docker" },
-  { import = "astrocommunity.pack.markdown" },
-  { import = "astrocommunity.pack.svelte" },
+  -- { import = "astrocommunity.pack.markdown" },
+  -- { import = "astrocommunity.pack.svelte" },
   { import = "astrocommunity.pack.json" },
 
 
@@ -53,7 +53,7 @@ return {
   { import = "astrocommunity.utility.mason-tool-installer-nvim" },
   { import = "astrocommunity.lsp.delimited-nvim"},
   { import = "astrocommunity.lsp.garbage-day-nvim"},
-  { import = "astrocommunity.lsp.inc-rename-nvim"},
+  -- { import = "astrocommunity.lsp.inc-rename-nvim"},
   { import = "astrocommunity.lsp.lsp-lens-nvim"},
   { import = "astrocommunity.lsp.nvim-lint"},
   { import = "astrocommunity.lsp.ts-error-translator-nvim"},
