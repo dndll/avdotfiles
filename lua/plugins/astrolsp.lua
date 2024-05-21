@@ -50,19 +50,19 @@ return {
     -- customize how language servers are attached
     handlers = {
       -- TODO: for rustaceanvim rust_analyzer = false,
-      
+
       -- a function without a key is simply the default handler, functions take two parameters, the server name and the configured options table for that server
       -- function(server, opts) require("lspconfig")[server].setup(opts) end
 
       -- the key is the server that is being setup with `lspconfig`
       -- rust_analyzer = false, -- setting a handler to false will disable the set up of that language server
       -- pyright = function(_, opts) require("lspconfig").pyright.setup(opts) end -- or a custom handler function can be passed
-        -- Configure `vim.lsp.handlers`
+      -- Configure `vim.lsp.handlers`
     },
     -- Configure `vim.lsp.handlers`
     lsp_handlers = {
       -- ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded", silent = true }),
-      ["textDocument/signatureHelp"] = false, -- set to false to disable any custom handlers
+      -- ["textDocument/signatureHelp"] = false, -- set to false to disable any custom handlers
     },
     -- Configure buffer local auto commands to add when attaching a language server
     autocmds = {

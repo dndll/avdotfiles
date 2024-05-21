@@ -1,8 +1,8 @@
+if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 ---@type LazySpec
 return {
   "Exafunction/codeium.vim",
   event = "BufEnter",
-  ---@type AstroUIOpts
   config = function()
        vim.keymap.set("i", "<C-g>", function() return vim.api.nvim_call_function("codeium#Accept", {}) end, { expr = true })
   end
